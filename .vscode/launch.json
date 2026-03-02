@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Khawi (Debug)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "toolArgs": [
+        "--dart-define=SUPABASE_URL=https://oxcustajfzeqibnkjthp.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_jjF9aK40I9cWynRsw2vKeQ_3dtvVsaz",
+        "--dart-define=SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID=129754711874-3mjqg3b9jdqff9f65mensv7u0maila8e.apps.googleusercontent.com"
+      ]
+    },
+    {
+      "name": "Khawi (Profile)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "profile",
+      "toolArgs": [
+        "--dart-define=SUPABASE_URL=https://oxcustajfzeqibnkjthp.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_jjF9aK40I9cWynRsw2vKeQ_3dtvVsaz",
+        "--dart-define=SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID=129754711874-3mjqg3b9jdqff9f65mensv7u0maila8e.apps.googleusercontent.com"
+      ]
+    },
+    {
+      "name": "Khawi (Release)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "release",
+      "toolArgs": [
+        "--dart-define=SUPABASE_URL=https://oxcustajfzeqibnkjthp.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_jjF9aK40I9cWynRsw2vKeQ_3dtvVsaz",
+        "--dart-define=SUPABASE_AUTH_EXTERNAL_GOOGLE_CLIENT_ID=129754711874-3mjqg3b9jdqff9f65mensv7u0maila8e.apps.googleusercontent.com"
+      ]
+    }
+  ]
+}

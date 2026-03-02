@@ -1,0 +1,211 @@
+{
+  "milestones": [
+    "Gamification Sprint 1",
+    "Gamification Sprint 2",
+    "Gamification Sprint 3",
+    "Gamification Sprint 4"
+  ],
+  "labels": [
+    { "name": "program:gamification", "color": "5319E7", "description": "Gamification program work" },
+    { "name": "type:feature", "color": "1D76DB", "description": "Feature delivery" },
+    { "name": "type:infra", "color": "0E8A16", "description": "Infrastructure/platform" },
+    { "name": "type:analytics", "color": "FBCA04", "description": "Analytics and experimentation" },
+    { "name": "type:qa", "color": "BFD4F2", "description": "QA and test quality" },
+    { "name": "area:frontend", "color": "C5DEF5", "description": "Flutter app" },
+    { "name": "area:backend", "color": "D4C5F9", "description": "Supabase/Edge/backend" },
+    { "name": "area:data", "color": "F9D0C4", "description": "Data/metrics" },
+    { "name": "area:qa", "color": "FEF2C0", "description": "QA ownership" },
+    { "name": "area:product", "color": "BFDADC", "description": "Product/design ownership" },
+    { "name": "priority:p0", "color": "B60205", "description": "Critical" },
+    { "name": "priority:p1", "color": "D93F0B", "description": "High" },
+    { "name": "priority:p2", "color": "FBCA04", "description": "Medium" },
+    { "name": "sprint:1", "color": "0052CC", "description": "Sprint 1" },
+    { "name": "sprint:2", "color": "0065FF", "description": "Sprint 2" },
+    { "name": "sprint:3", "color": "2684FF", "description": "Sprint 3" },
+    { "name": "sprint:4", "color": "4C9AFF", "description": "Sprint 4" }
+  ],
+  "issues": [
+    {
+      "id": "GAMI-101",
+      "title": "Define gamification event taxonomy v1",
+      "milestone": "Gamification Sprint 1",
+      "labels": ["program:gamification", "type:analytics", "area:data", "priority:p0", "sprint:1"],
+      "body": "Summary\nDefine canonical event names, properties, and shared context fields for Tier-1 gamification and ride lifecycle telemetry.\n\nAcceptance Criteria\n- Event dictionary approved by FE/BE/DA\n- Tier-1 flows mapped to explicit events\n- No PII in schema"
+    },
+    {
+      "id": "GAMI-102",
+      "title": "Add Riverpod gamification domain scaffold",
+      "milestone": "Gamification Sprint 1",
+      "labels": ["program:gamification", "type:infra", "area:frontend", "priority:p0", "sprint:1"],
+      "body": "Summary\nAdd compile-safe gamification domain scaffolding (`state`, `providers`, `orchestrator`) with no behavior change.\n\nAcceptance Criteria\n- Scaffold compiles and tests pass\n- No runtime behavior change in production paths"
+    },
+    {
+      "id": "GAMI-103",
+      "title": "Build passive progress snapshot API contract",
+      "milestone": "Gamification Sprint 1",
+      "labels": ["program:gamification", "type:feature", "area:backend", "priority:p0", "sprint:1"],
+      "body": "Summary\nExpose a read-only, role-aware progress snapshot API for initial UI surfaces.\n\nAcceptance Criteria\n- FE can fetch snapshot reliably\n- Contract documented and versioned"
+    },
+    {
+      "id": "GAMI-104",
+      "title": "Add post-trip passive progress card (read-only)",
+      "milestone": "Gamification Sprint 1",
+      "labels": ["program:gamification", "type:feature", "area:frontend", "priority:p1", "sprint:1"],
+      "body": "Summary\nRender read-only progress feedback in post-trip summary.\n\nAcceptance Criteria\n- Card appears after trip completion\n- No booking/post-trip latency regression"
+    },
+    {
+      "id": "GAMI-105",
+      "title": "Wire analytics events for existing ride lifecycle",
+      "milestone": "Gamification Sprint 1",
+      "labels": ["program:gamification", "type:analytics", "area:frontend", "area:data", "priority:p0", "sprint:1"],
+      "body": "Summary\nInstrument key ride lifecycle events with required context metadata.\n\nAcceptance Criteria\n- >=95% expected coverage in QA logs\n- Schema validation passes"
+    },
+    {
+      "id": "GAMI-106",
+      "title": "Build experiment cohort assignment service (server-side)",
+      "milestone": "Gamification Sprint 1",
+      "labels": ["program:gamification", "type:infra", "area:backend", "area:data", "priority:p0", "sprint:1"],
+      "body": "Summary\nCreate deterministic user cohort assignment for experiments and rollouts.\n\nAcceptance Criteria\n- Stable assignment per user\n- Idempotent and auditable behavior"
+    },
+    {
+      "id": "GAMI-107",
+      "title": "QA baseline non-regression matrix for rides and routing",
+      "milestone": "Gamification Sprint 1",
+      "labels": ["program:gamification", "type:qa", "area:qa", "priority:p0", "sprint:1"],
+      "body": "Summary\nEstablish baseline quality matrix before enabling Tier-1 mechanics.\n\nAcceptance Criteria\n- Critical flow regression suite passes\n- Baseline report published"
+    },
+    {
+      "id": "GAMI-201",
+      "title": "Implement streak state model and grace/recovery rules",
+      "milestone": "Gamification Sprint 2",
+      "labels": ["program:gamification", "type:feature", "area:backend", "priority:p0", "sprint:2"],
+      "body": "Summary\nImplement deterministic streak transitions with fairness and replay safety.\n\nAcceptance Criteria\n- Transition matrix covered by tests\n- Duplicate events do not corrupt streak state"
+    },
+    {
+      "id": "GAMI-202",
+      "title": "Implement mission definition schema and weekly scheduler",
+      "milestone": "Gamification Sprint 2",
+      "labels": ["program:gamification", "type:feature", "area:backend", "priority:p0", "sprint:2"],
+      "body": "Summary\nCreate mission schema and scheduler for role/cohort weekly missions.\n\nAcceptance Criteria\n- Missions generated by policy\n- Supports role and cohort variants"
+    },
+    {
+      "id": "GAMI-203",
+      "title": "Implement mission progress evaluator on ride completion",
+      "milestone": "Gamification Sprint 2",
+      "labels": ["program:gamification", "type:feature", "area:backend", "priority:p0", "sprint:2"],
+      "body": "Summary\nProcess qualifying ride events to advance mission progress.\n\nAcceptance Criteria\n- Idempotent mission updates\n- Progress state remains consistent under retries"
+    },
+    {
+      "id": "GAMI-204",
+      "title": "Add mission UI card to role home",
+      "milestone": "Gamification Sprint 2",
+      "labels": ["program:gamification", "type:feature", "area:frontend", "priority:p1", "sprint:2"],
+      "body": "Summary\nDisplay active missions and completion state on role home.\n\nAcceptance Criteria\n- AR/EN localized\n- Reactive updates without full-screen rebuild"
+    },
+    {
+      "id": "GAMI-205",
+      "title": "Add streak UI module and recovery affordance",
+      "milestone": "Gamification Sprint 2",
+      "labels": ["program:gamification", "type:feature", "area:frontend", "priority:p1", "sprint:2"],
+      "body": "Summary\nExpose streak status, grace state, and recovery affordance in UI.\n\nAcceptance Criteria\n- Clear rule explanations in copy\n- Recovery state shown accurately"
+    },
+    {
+      "id": "GAMI-206",
+      "title": "Add notification hooks for mission and streak milestones",
+      "milestone": "Gamification Sprint 2",
+      "labels": ["program:gamification", "type:feature", "area:frontend", "area:backend", "priority:p1", "sprint:2"],
+      "body": "Summary\nSend milestone notifications with anti-spam constraints.\n\nAcceptance Criteria\n- Milestone notifications are idempotent\n- User preference/throttle rules respected"
+    },
+    {
+      "id": "GAMI-207",
+      "title": "QA automation for mission and streak edge cases",
+      "milestone": "Gamification Sprint 2",
+      "labels": ["program:gamification", "type:qa", "area:qa", "priority:p0", "sprint:2"],
+      "body": "Summary\nAutomate edge cases for streak breaks/recovery and mission progress race conditions.\n\nAcceptance Criteria\n- Edge-case scenarios pass in CI\n- No critical regression introduced"
+    },
+    {
+      "id": "GAMI-301",
+      "title": "Implement Value Wallet calculation engine",
+      "milestone": "Gamification Sprint 3",
+      "labels": ["program:gamification", "type:feature", "area:backend", "area:data", "priority:p0", "sprint:3"],
+      "body": "Summary\nCompute wallet states (`earned`, `unlocked`, `pending`) with configurable policy controls.\n\nAcceptance Criteria\n- Deterministic calculations\n- Policy inputs configurable via remote settings"
+    },
+    {
+      "id": "GAMI-302",
+      "title": "Build wallet summary and history APIs",
+      "milestone": "Gamification Sprint 3",
+      "labels": ["program:gamification", "type:feature", "area:backend", "priority:p1", "sprint:3"],
+      "body": "Summary\nExpose wallet summary and transition history endpoints for app surfaces.\n\nAcceptance Criteria\n- Summary + paginated history available\n- API contract documented"
+    },
+    {
+      "id": "GAMI-303",
+      "title": "Add Value Wallet UI to home and profile/rewards",
+      "milestone": "Gamification Sprint 3",
+      "labels": ["program:gamification", "type:feature", "area:frontend", "priority:p1", "sprint:3"],
+      "body": "Summary\nRender wallet summary in key user surfaces with consistent values.\n\nAcceptance Criteria\n- Values match backend across screens\n- Accessibility and localization complete"
+    },
+    {
+      "id": "GAMI-304",
+      "title": "Implement Next Best Action recommendation service v1",
+      "milestone": "Gamification Sprint 3",
+      "labels": ["program:gamification", "type:feature", "area:backend", "area:data", "priority:p1", "sprint:3"],
+      "body": "Summary\nReturn one ranked recommendation that maximizes progress with minimal user effort.\n\nAcceptance Criteria\n- One recommendation per context\n- Explainability metadata included"
+    },
+    {
+      "id": "GAMI-305",
+      "title": "Add Next Best Action card and click tracking",
+      "milestone": "Gamification Sprint 3",
+      "labels": ["program:gamification", "type:feature", "area:frontend", "area:data", "priority:p1", "sprint:3"],
+      "body": "Summary\nDisplay recommendation card and track CTA interactions by cohort.\n\nAcceptance Criteria\n- CTA shown reliably\n- Open/click/outcome events captured"
+    },
+    {
+      "id": "GAMI-306",
+      "title": "Extend anti-fraud rules for gamified events",
+      "milestone": "Gamification Sprint 3",
+      "labels": ["program:gamification", "type:feature", "area:backend", "priority:p0", "sprint:3"],
+      "body": "Summary\nHarden fraud rules against synthetic progress and reward farming.\n\nAcceptance Criteria\n- New fraud rules deployed\n- Monitoring for false positive/negative rates"
+    },
+    {
+      "id": "GAMI-307",
+      "title": "QA performance validation for post-trip reward processing path",
+      "milestone": "Gamification Sprint 3",
+      "labels": ["program:gamification", "type:qa", "area:qa", "priority:p0", "sprint:3"],
+      "body": "Summary\nValidate reward-processing latency and system behavior under load.\n\nAcceptance Criteria\n- P95 stays within SLO\n- Core booking/ride flow unaffected"
+    },
+    {
+      "id": "GAMI-401",
+      "title": "Build neighborhood/campus team challenges (social belonging)",
+      "milestone": "Gamification Sprint 4",
+      "labels": ["program:gamification", "type:feature", "area:frontend", "area:backend", "priority:p0", "sprint:4"],
+      "body": "Summary\nLaunch social team challenges so users can join neighborhood/campus cohorts and progress together.\n\nAcceptance Criteria\n- Users can join team challenges and see team progress\n- Completion logic is deterministic and idempotent\n- Team challenge events are emitted for analytics"
+    },
+    {
+      "id": "GAMI-402",
+      "title": "Implement Trust + Safety mastery tracks",
+      "milestone": "Gamification Sprint 4",
+      "labels": ["program:gamification", "type:feature", "area:frontend", "area:backend", "priority:p0", "sprint:4"],
+      "body": "Summary\nCreate mastery-track progression tied to safe and reliable rider/driver behavior.\n\nAcceptance Criteria\n- Mastery progression updates correctly from qualifying actions\n- Level unlocks are replay-safe and auditable\n- AR/EN messaging clearly explains progression rules"
+    },
+    {
+      "id": "GAMI-403",
+      "title": "Implement smart bonus windows for off-peak and underserved routes",
+      "milestone": "Gamification Sprint 4",
+      "labels": ["program:gamification", "type:feature", "area:backend", "area:data", "area:frontend", "priority:p0", "sprint:4"],
+      "body": "Summary\nIntroduce dynamic bonus windows that reward demand-shaping behaviors.\n\nAcceptance Criteria\n- Eligible users see active windows with transparent conditions\n- Bonus claims are idempotent and policy-constrained\n- Exposure/claim outcomes are logged for optimization"
+    },
+    {
+      "id": "GAMI-404",
+      "title": "Integrate A/B cohorts and measurement wiring across Tier-2 mechanics",
+      "milestone": "Gamification Sprint 4",
+      "labels": ["program:gamification", "type:infra", "area:backend", "area:data", "area:frontend", "priority:p0", "sprint:4"],
+      "body": "Summary\nWire experiment cohort assignment and analytics context across team challenges, mastery tracks, and bonus windows.\n\nAcceptance Criteria\n- Tier-2 events include experiment metadata end-to-end\n- At least 3 experiment slices are analyzable without manual joins\n- Guardrail metrics are available for fast rollback decisions"
+    },
+    {
+      "id": "GAMI-405",
+      "title": "QA/performance validation for the full gamification stack",
+      "milestone": "Gamification Sprint 4",
+      "labels": ["program:gamification", "type:qa", "area:qa", "area:frontend", "area:backend", "priority:p0", "sprint:4"],
+      "body": "Summary\nValidate reliability, accessibility, and runtime performance for Tier-1 + Tier-2 gamification together.\n\nAcceptance Criteria\n- No critical functional regressions in core ride flows\n- P95 reward/gamification processing remains within agreed SLO\n- QA report includes findings, risks, and rollout recommendation"
+    }
+  ]
+}

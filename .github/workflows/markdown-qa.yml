@@ -1,0 +1,36 @@
+name: Markdown QA
+
+permissions:
+  contents: read
+
+concurrency:
+  group: markdown-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "**/*.md"
+      - "scripts/markdown_qa.ps1"
+      - ".github/workflows/markdown-qa.yml"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "**/*.md"
+      - "scripts/markdown_qa.ps1"
+      - ".github/workflows/markdown-qa.yml"
+  workflow_dispatch:
+
+jobs:
+  markdown-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Markdown QA
+        shell: pwsh
+        run: ./scripts/markdown_qa.ps1 -RootPath .

@@ -1,0 +1,51 @@
+name: Khawi CI
+
+permissions:
+  contents: read
+
+concurrency:
+  group: khawi-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.3'
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate code
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Build APK (Debug)
+        run: |
+          flutter build apk --debug 2>&1 || true
+          # Verify APK was actually built
+          test -f build/app/outputs/flutter-apk/app-debug.apk || exit 1
+          echo "✓ APK built successfully"

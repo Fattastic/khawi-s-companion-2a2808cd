@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "REPLACE_WITH_TEAM_ID.com.khawi.app.khawi_app",
+        "paths": [
+          "/invite/*",
+          "/trip/*",
+          "/shared/*"
+        ]
+      }
+    ]
+  }
+}

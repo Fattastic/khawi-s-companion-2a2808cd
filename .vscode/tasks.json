@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Markdown QA",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/markdown_qa.ps1",
+        "-RootPath",
+        "${workspaceFolder}"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
