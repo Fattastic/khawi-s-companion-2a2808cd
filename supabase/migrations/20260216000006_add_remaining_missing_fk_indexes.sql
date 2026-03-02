@@ -1,0 +1,15 @@
+create index if not exists junior_driver_grants_kid_id_fk_idx_1a9d37 on public.junior_driver_grants (kid_id);
+create index if not exists junior_invite_codes_parent_id_fk_idx_fd6714 on public.junior_invite_codes (parent_id);
+create index if not exists junior_run_events_actor_id_fk_idx_d03a72 on public.junior_run_events (actor_id);
+create index if not exists junior_runs_trip_id_fk_idx_228115 on public.junior_runs (trip_id);
+create index if not exists moderation_events_actor_id_fk_idx_470610 on public.moderation_events (actor_id);
+create index if not exists notifications_user_id_fk_idx_f0de9e on public.notifications (user_id);
+create index if not exists reports_reported_user_id_fk_idx_63942a on public.reports (reported_user_id);
+create index if not exists sos_events_run_id_fk_idx_42951d on public.sos_events (run_id);
+create index if not exists sos_events_triggered_by_fk_idx_b6a907 on public.sos_events (triggered_by);
+create index if not exists sos_events_trip_id_fk_idx_77067e on public.sos_events (trip_id);
+create index if not exists support_tickets_created_by_fk_idx_f77176 on public.support_tickets (created_by);
+create index if not exists trip_locations_user_id_fk_idx_c88857 on public.trip_locations (user_id);
+create index if not exists trip_messages_sender_id_fk_idx_280c80 on public.trip_messages (sender_id);
+create index if not exists trusted_drivers_driver_id_fk_idx_83ae4a on public.trusted_drivers (driver_id);
+create index if not exists xp_events_trip_id_fk_idx_48c9f6 on public.xp_events (trip_id);
