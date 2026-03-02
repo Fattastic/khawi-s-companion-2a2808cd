@@ -88,7 +88,7 @@ serve(async (req) => {
             classification: out.classification,
             sentiment: out.sentiment,
             summary: out.summary,
-            suggested_reply: out.suggested_reply,
+            suggested_reply: out.suggestedReply,
             action_tags: out.action_tags,
             meta: { mode: "rules", safe: true },
         });
